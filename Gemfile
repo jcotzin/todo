@@ -10,6 +10,8 @@ gem 'rails', '~> 5.0.0'
 # gem 'pg', group: :production
 gem 'pg'
 
+gem 'rails_12factor', group: :production
+
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
