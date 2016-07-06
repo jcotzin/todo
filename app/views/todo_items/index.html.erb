@@ -1,27 +1,41 @@
-<p id="notice"><%= notice %></p>
+<head>
+  <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/18d7b7a6f1.js"></script>
 
-<h1>Todo Items</h1>
+</head>
+<body>
+  <p id="notice"><%= notice %><i class="fa fa-bug" aria-hidden="true"></i>
+</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Todo Items</h1><i class="fa fa-bug" aria-hidden="true"></i>
 
-  <tbody>
-    <% @todo_items.each do |todo_item| %>
+
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= todo_item.description %></td>
-        <td><%= link_to 'Show', todo_item %></td>
-        <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
-        <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><i class="fa fa-bug" aria-hidden="true"></i>
+Description</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @todo_items.each do |todo_item| %>
+        <tr>
+          <td><%= todo_item.description %></td>
+          <td><!-- Standard button -->
+  <button type="button" class="btn btn-default"><%= link_to 'Show', todo_item %></button></td>
+          <td><!-- Standard button -->
+  <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_todo_item_path(todo_item) %></button></td>
+          <td><!-- Standard button -->
+  <button type="button" class="btn btn-default"><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
 
-<%= link_to 'New Todo Item', new_todo_item_path %>
+  <!-- Standard button -->
+  <button type="button" class="btn btn-default"><%= link_to 'New Todo Item', new_todo_item_path %></button>
+</body>
